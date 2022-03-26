@@ -15,24 +15,24 @@ export default function Profile() {
         <>
             <div className='profile'>
                 <button className='profbtn' onClick={()=> setIsProfileOpen(false)}>
-                    <p><CgProfile size={50} /></p>
+                    <p><CgProfile size={50}  /></p>
                 </button>
             </div>
-            <div className='profpop'>
-                <div className='username'>
-               
+            <div className='profpop' >
+                <div className='username'>                   
+                    <p>Full Name</p>
                 </div>
                 <div className='numberofposts'>
-
+                    <p>3 posts</p>
                 </div>
                 <div className='treesplanted'>
-
+                    <p>1 tree planted</p>
                 </div>
                 <div className='rank'>
-
+                    <p>Rank:192</p>
                 </div>
                 <div className='description'>
-                    
+                    <p>wannabe environmentalist. used to annoy people on fb now trying to annoy people here. #gotrees #bi #vegan #pride</p>
                 </div>
             </div>
         </>
