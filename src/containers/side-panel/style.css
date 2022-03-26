@@ -1,0 +1,14 @@
+.logo {
+    margin-left: 15px;
+    margin-top: 26px;
+    height: 60px;
+    width: 60px;
+    float: left;
+}
+
+.title {
+    margin-left: 85px;
+    margin-top: 40px;
+    font-weight: bold;
+    font-size: 26px;   
+}
