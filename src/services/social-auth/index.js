@@ -26,7 +26,12 @@ export default function SignInWithGoogle(){
         onAuthStateChanged(getAuth(fbApp), (user)=>{
             if(user){
                 setIsLoggedIn(true);    
-                setUserObj(user);
+                setUserObj(
+                    {
+                        uid: user.uid,
+                        displayName: user.displayName
+                    }
+                );
             } else{
                 setIsLoggedIn(false);
             }
