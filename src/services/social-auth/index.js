@@ -3,11 +3,13 @@ import {
   getAuth,
   signInWithPopup,
   GoogleAuthProvider,
+  onAuthStateChanged,
 } from "firebase/auth";
 import { useEffect, useState } from "react";
 
 export default function SignInWithGoogle(){
-    const [isLoggedIn, setIsLoggedIn] = useState(getAuth(fbApp).currentUser);
+    const [init, setInit] = useState(false)
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [userObj, setUserObj] = useState(null);
     const googleSignIn = () => {
         const provider = new GoogleAuthProvider();
@@ -19,15 +21,20 @@ export default function SignInWithGoogle(){
             console.log(err);
         })
     }
+
     useEffect(()=>{
-        getAuth(fbApp).onAuthStateChanged((user)=>{
+        onAuthStateChanged(getAuth(fbApp), (user)=>{
             if(user){
+                setIsLoggedIn(true);    
                 setUserObj(user);
+            } else{
+                setIsLoggedIn(false);
             }
         })
+        setInit(true);
     }, []);
 
-    return (isLoggedIn) ? (
+    return (init) ? (
         <div className="login">
             <p>Logged In With Google</p>
         </div>

@@ -2,20 +2,19 @@
     position: fixed;
     margin-top: 18px;
     margin-left: 96%;
+    
 }
 
 .profpop{
     position: absolute;
     top: 10%;
-    left: 65%;
+    left: 69%;
     width: 30%;
     height: 80%;
     background-color:#f4f4f4;
     border-radius: 30px;
-
     display: flex;
     justify-content: center;
-
     align-items: center;   
 }
 
@@ -72,3 +71,8 @@
     top: 23%;
     font-size: 1.10vw;
 }
+
+
+
+
+

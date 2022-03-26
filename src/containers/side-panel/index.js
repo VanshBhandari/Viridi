@@ -1,7 +1,7 @@
 import Logo from '../../media/Text Logo.png'
 import './style.css'
 import { SearchBar } from '../../components'
-import SignInWithGoogle from "../../services/social-auth"
+import SignInWithGoogle from '../../services/social-auth'
 
 export default function SidePanel() {
   return (

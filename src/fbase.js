@@ -11,4 +11,3 @@ const firebaseConfig = {
 };
 
 export const fbApp = initializeApp(firebaseConfig);
-export const dbService = fbApp.firestore();
