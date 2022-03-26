@@ -1,4 +1,5 @@
 import { initializeApp } from "firebase/app";
+import "firebase/firestore"
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -10,3 +11,4 @@ const firebaseConfig = {
 };
 
 export const fbApp = initializeApp(firebaseConfig);
+export const dbService = fbApp.firestore();

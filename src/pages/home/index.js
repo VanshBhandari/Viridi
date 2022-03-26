@@ -1,6 +1,6 @@
 import React from 'react'
 import "./style.css"
-import { MainSection, SidePanel, Profile, Shop } from '../../containers'
+import { MainSection, SidePanel, Profile, Shop, MakePost } from '../../containers'
 
 export default function Home() {
   return (

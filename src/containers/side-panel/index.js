@@ -1,6 +1,7 @@
 import Logo from '../../media/Text Logo.png'
 import './style.css'
 import { SearchBar } from '../../components'
+import SignInWithGoogle from "../../services/social-auth"
 
 export default function SidePanel() {
   return (
@@ -17,6 +18,9 @@ export default function SidePanel() {
           </div>
           <div class="flex-shrink-0 flex border-t border-gray-200 p-4">
             Side footer
+          </div>
+          <div>
+            <SignInWithGoogle />
           </div>
         </div>
       </div>
