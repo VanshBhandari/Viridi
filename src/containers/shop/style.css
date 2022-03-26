@@ -1,0 +1,19 @@
+.shoppop{
+    position: fixed;
+    top: 40%;
+    left: 10%;
+    width: 80%;
+    height: 70%;
+    background-color: lightgray;
+    border-radius: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.closebtn{
+    position: absolute;
+    left: 95%;
+    top: 5%;
+}
