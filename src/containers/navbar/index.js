@@ -7,8 +7,8 @@ import { MdOutlineShoppingCart } from "react-icons/md";
 export default function Navbar() {
 
     return (
-        <nav className="NavBar">
-            <div className="navicons">
+        <nav className="NavBar flex justify-around py-3 mx-auto bg-accent w-60 rounded-b-3xl">
+            <div className="navicons flex flex-row">
                 <div className="CreatePost">
                     <p><AiOutlinePlusCircle size={35} /></p>
                 </div>
