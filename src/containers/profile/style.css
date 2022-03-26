@@ -1,18 +1,17 @@
 .profile{
     position: fixed;
-    margin-top: 20px;
-    margin-left: 1781px;
+    margin-top: 18px;
+    margin-left: 96%;
 }
 
 .profpop{
     position: fixed;
     top: 10%;
-    left: 65%;
+    left: 69%;
     width: 30%;
     height: 80%;
     background-color: lightgray;
     border-radius: 30px;
-
     display: flex;
     justify-content: center;
     align-items: center;
