@@ -6,7 +6,7 @@ export default function Shop(props) {
     
     return (props.trigger) ? (
         <>
-            
+            <div className='overlay o-block'></div>
             <div className='shoppop'>
                 <div className='shoppop-in'>
                     <button className='closebtn' onClick={()=> props.setTrigger(false)}>
