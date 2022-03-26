@@ -1,0 +1,1 @@
+export { default as SignInWithGoogle } from "./social-auth"
