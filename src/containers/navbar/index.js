@@ -33,13 +33,11 @@ export default function Navbar() {
                         </div>
                         <button className="Shop" onClick={OnShopClick}>
                             <p><MdOutlineShoppingCart size={28} /></p>
-                            <Shop trigger={isShopClick} setTrigger={setIsShopClick}>
-
-                            </Shop>
                         </button>
                     </div>
                 </nav>
             </div>
+            <Shop trigger={isShopClick} setTrigger={setIsShopClick} />
         </>
     )
 
