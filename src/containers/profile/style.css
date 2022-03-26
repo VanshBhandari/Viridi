@@ -2,17 +2,77 @@
     position: fixed;
     margin-top: 18px;
     margin-left: 96%;
+    
 }
 
 .profpop{
-    position: fixed;
+    position: absolute;
     top: 10%;
     left: 69%;
     width: 30%;
     height: 80%;
-    background-color: lightgray;
+    background-color:#f4f4f4;
     border-radius: 30px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center;   
 }
+
+.username{
+    position: absolute;
+    left: 8%;
+    top: 7%;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.numberofposts{
+    position: absolute;
+    display: grid;
+    width: 20%;
+    left: 8%;
+    top: 16%;
+    background-color: #bae7bc;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1.10vw;
+    text-align: center;
+}
+
+.treesplanted{
+    position:absolute;
+    display: grid;
+    width: 30%;
+    left: 32%;
+    top: 16%;
+    background-color: #bae7bc;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1.10vw;
+    text-align: center;
+}
+
+.rank{
+    position:absolute;
+    display: grid;
+    width: 20%;
+    left: 66%;
+    top: 16%;
+    background-color: #bae7bc;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1.10vw;
+    text-align: center;
+}
+
+.description{
+    position: absolute;
+    left: 8%;
+    top: 23%;
+    font-size: 1.10vw;
+}
+
+
+
+
+
