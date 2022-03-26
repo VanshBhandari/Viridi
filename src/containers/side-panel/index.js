@@ -1,5 +1,6 @@
 import Logo from '../../media/Text Logo.png'
 import './style.css'
+import { SearchBar } from '../../components'
 
 export default function SidePanel() {
   return (
@@ -9,6 +10,9 @@ export default function SidePanel() {
           <div class="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
             <div class="flex items-center flex-shrink-0 px-4">
               <img src={Logo} className="h-16 w-auto"/>
+            </div>
+            <div className="flex-1 py-7">
+              <SearchBar />
             </div>
           </div>
           <div class="flex-shrink-0 flex border-t border-gray-200 p-4">
