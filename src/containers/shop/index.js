@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { MdClose } from "react-icons/md";
 import './style.css'
+import Logo from '../shop/Group 32.png'
 
 export default function Shop(props) {
     
@@ -12,7 +13,7 @@ export default function Shop(props) {
                     <button className='closebtn' onClick={()=> props.setTrigger(false)}>
                         <MdClose size={30}/>
                     </button>
-                    <p>helloooo</p>
+                    <img src={Logo}  className="h-80 w-auto left-2"/>
                 </div>
             </div>
         </>
