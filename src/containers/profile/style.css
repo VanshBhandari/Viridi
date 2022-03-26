@@ -1,7 +1,7 @@
 .profile{
     position: fixed;
     margin-top: 18px;
-    margin-left: 96%;
+    margin-left: 95%;
     
 }
 
@@ -72,7 +72,26 @@
     font-size: 1.10vw;
 }
 
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 3;
+    display: none;
+}
+  
+.o-block {
+    display: block;
+}
 
+.popup {
+    z-index: 10;
+}
 
 
 
