@@ -19,8 +19,20 @@ export default function Profile() {
                 </button>
             </div>
             <div className='profpop'>
-                <div className='profpop-in'>
-                    <p>helloooo</p>
+                <div className='username'>
+               
+                </div>
+                <div className='numberofposts'>
+
+                </div>
+                <div className='treesplanted'>
+
+                </div>
+                <div className='rank'>
+
+                </div>
+                <div className='description'>
+                    
                 </div>
             </div>
         </>
