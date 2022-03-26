@@ -5,7 +5,7 @@ import {
   GoogleAuthProvider,
 } from "firebase/auth";
 
-export default function signInWithGoogle(){
+export default function SignInWithGoogle(){
 
     const googleSignIn = () => {
         const provider = new GoogleAuthProvider();
