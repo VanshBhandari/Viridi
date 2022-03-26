@@ -5,8 +5,8 @@ import { Navbar, SidePanel } from '../../containers'
 export default function Home() {
   return (
     <div className="home">
-        <Navbar />
         <SidePanel />
+        <Navbar />
     </div>
   )
 }
