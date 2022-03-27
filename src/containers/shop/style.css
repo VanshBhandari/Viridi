@@ -1,9 +1,9 @@
 .shoppop{
     position: fixed;
     top: 40%;
-    left: 10%;
-    width: 80%;
-    height: 70%;
+    left: 12.5%;
+    width: 75%;
+    height: 65%;
     background-color: #f4f4f4;
     border-radius: 30px;
 
@@ -13,11 +13,6 @@
     z-index: 10;
 }
 
-.closebtn{
-    position: absolute;
-    left: 95%;
-    top: 5%;
-}
 
 .overlay {
     position: fixed;
@@ -35,3 +30,4 @@
 .o-block {
     display: block;
 }
+
