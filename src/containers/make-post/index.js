@@ -3,54 +3,58 @@ import React, { useState, useContext } from 'react'
 import { MdClose } from "react-icons/md";
 import './style.css'
 import { fbApp } from '../../fbase';
+import { v4 as uuidv4 } from "uuid";
 import { addDoc, collection, getFirestore } from 'firebase/firestore';
 import { UserContext } from '../../contexts/user';
+import { storage } from '../../fbase';
 
-export default function MakePost( props, userObj ) {
+export default function MakePost(props) {
     const [user, setUser] = useContext(UserContext).user
     const [post, setpost] = useState("");
-    const [attachment, setAttachment] = useState("");
-    const [attachment2, setAttachment2] = useState("");
+    const [urls, setUrls] = useState([]);
+    const [attachment, setAttachment] = useState([]);
+    const [images, setImages] = useState([]);
+    
+    const [progress, setProgress] = useState(0);
     const onSubmit = async (event) => {
         event.preventDefault();
         if (post === "") {
             return;
         }
-        let attachmentUrl = "";
-        if (attachment !== "") {
-            const attachmentRef = ref(
-                getStorage(fbApp),
-            );
-            const response = await uploadString(
-                attachmentRef,
-                attachment,
-                "data_url"
-            );
-            attachmentUrl = await getDownloadURL(response.ref);
-        }
-        
-        let attachmentUrl2 = "";
-        if (attachment2 !== "") {
-            const attachmentRef2 = ref(
-                getStorage(fbApp),
-            );
-            const response = await uploadString(
-                attachmentRef2,
-                attachment2,
-                "data_url2"
-            );
-            attachmentUrl2 = await getDownloadURL(response.ref);
-        }
+        // let attachmentUrl1 = "";
+        // if (attachment !== "") {
+        //     const attachmentRef1 = ref(
+        //         getStorage(fbApp),
+        //     );
+        //     const response = await uploadString(
+        //         attachmentRef1,
+        //         attachment[0],
+        //         "data_url"
+        //     );
+        //     attachmentUrl1 = await getDownloadURL(response.ref);
+        // }
+        // let attachmentUrl2 = "";
+        // if (attachment !== "") {
+        //     const attachmentRef2 = ref(
+        //         getStorage(fbApp),
+        //     );
+        //     const response = await uploadString(
+        //         attachmentRef2,
+        //         attachment[1],
+        //         "data_url"
+        //     );
+        //     attachmentUrl2 = await getDownloadURL(response.ref);
+        // }
+
         await addDoc(collection(getFirestore(fbApp), "posts"), {
             text: post,
-            createdAt: Date.now(),
-            creatorId: userObj.uid,
-            attachmentUrl,
-            attachmentUrl2
+            creatorId: user.uid,
+            // attachmentUrl1,
+            // attachmentUrl2
         });
         setpost("");
         setAttachment("");
-        setAttachment2("");
+        // setAttachment2("");
     }
 
     const onChange = (event) => {
@@ -61,43 +65,74 @@ export default function MakePost( props, userObj ) {
         setpost(value);
     };
 
-    const onFileChange = (event) => {
-        const {
-            target: { files },
-        } = event;
-        const theFile = files[0];
-        console.log(theFile);
-        const reader = new FileReader();
-        reader.onloadend = (finishedEvent) => {
+    const handleChange = (event) => {
+        for (let i = 0; i < 2; i++) {
             const {
-                currentTarget: { result },
-            } = finishedEvent;
-            setAttachment(result);
-        };
-        if (Boolean(theFile)) {
-            reader.readAsDataURL(theFile);
+                target: { files },
+            } = event;
+            const newImage = files[i];
+            console.log(newImage);
+            setImages((prevState) => [...prevState, newImage]);
+            const reader = new FileReader();
+            reader.onloadend = (finishedEvent) => {
+                const {
+                    currentTarget: { result },
+                } = finishedEvent;
+                setAttachment(result);
+                
+            };
         }
     };
 
-    const onFileChange2 = (event) => {
-        const {
-            target: { files },
-        } = event;
-        const theFile2 = files[0];
-        const reader2 = new FileReader();
-        reader2.onloadend = (finishedEvent2) => {
-            const {
-                currentTarget: { result2 },
-            } = finishedEvent2;
-            setAttachment2(result2);
-        };
-        if (Boolean(theFile2)) {
-            reader2.readAsDataURL(theFile2);
-        }
+    const handleUpload = () => {
+        images.map((image) => {
+            const uploadTask = ref(storage, `images/${image.name}`).put(image);
+            console.log(image);
+            uploadTask.on(
+                "state_changed",
+                (snapshot) => {
+                    const progress = Math.round(
+                        (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+                    );
+                    setProgress(progress);
+                },
+                (error) => {
+                    console.log(error);
+                },
+                async () => {
+                    await storage
+                        .ref("images")
+                        .child(image.name)
+                        .getDownloadURL()
+                        .then((urls) => {
+                            setUrls((prevState) => [...prevState, urls]);
+                        });
+                }
+            );
+        });
+
     };
+
+    // const onFileChange = (event) => {
+    //     const {
+    //         target: { files },
+    //     } = event;
+    //     const theFile = files[0];
+    // const reader = new FileReader();
+    // reader.onloadend = (finishedEvent) => {
+    //     const {
+    //         currentTarget: { result },
+    //     } = finishedEvent;
+    //     setAttachment(result);
+    // };
+    //     if (Boolean(theFile)) {
+    //         reader.readAsDataURL(theFile);
+    //     }
+    // };
+
+
 
     const onClearAttachment = () => setAttachment("");
-    const onClearAttachment2 = () => setAttachment2("");
 
     return (props.trigger) ? (
         <>
@@ -120,50 +155,38 @@ export default function MakePost( props, userObj ) {
                             <input type="submit" value="&rarr;" className="factoryInput__arrow" />
                         </div>
                         <label htmlFor="attach-file" className="factoryInput__label">
-                            <span>Add before photo</span>
+                            <span onClick={handleUpload}>Please Post Both Of Your Pictures</span>
                         </label>
                         <input
                             id="attach-file"
                             type="file"
+                            multiple
                             accept="image/*"
-                            onChange={onFileChange}
+                            onChange={handleChange}
                             style={{ opacity: 0 }}
                         />
-                        <label htmlFor="attach-file" className="factoryInput__label2">
-                            <span>Add after photo</span>
-                        </label>
-                        <input
-                            id="attach-file"
-                            type="file"
-                            accept="image/*"
-                            onChange={onFileChange2}
-                            style={{ opacity: 0 }}
-                        />
+                        {images.map((url, i) => (
+                            <img
+                                key={i}
+                                style={{ width: "500px" }}
+                                src={url}
+                            />
+                        ))}
 
-                        {attachment && (
-                            <div className="factoryForm__attachment">
-                                <img
-                                    src={attachment}
-                                    style={{ maxWidth:'30%'}}
-                                    alt="attachment"
-                                />
-                                <div className="factory__clear" onClick={onClearAttachment}>
-                                    <span>Remove</span>
-                                </div>
-                            </div>
-                        )}
-                        {attachment2 && (
-                            <div className="factoryForm__attachment2">
-                                <img
-                                    src={attachment2}
-                                    style={{ maxWidth:'10%'}}
-                                    alt="attachment"
-                                />
-                                <div className="factory__clear" onClick={onClearAttachment2}>
-                                    <span>Remove</span>
-                                </div>
-                            </div>
-                        )}
+                        <div className="factory__clear" onClick={onClearAttachment}>
+                            <span>Remove</span>
+                        </div>
+
+                        {/* <img
+                            src={attachment2}
+                            style={{ maxWidth: '10%' }}
+                        />
+                        <div className="factory__clear" onClick={onClearAttachment2}>
+                            <span>Remove</span>
+                        </div> */}
+                        <button onSubmit={onSubmit}>
+                            post
+                        </button>
                     </form>
 
                 </div>
@@ -172,4 +195,5 @@ export default function MakePost( props, userObj ) {
     ) : (
         ""
     )
+
 };
