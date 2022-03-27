@@ -30,7 +30,7 @@ export default function Shop(props) {
                             <p className='font-black text-4xl text-right'>Let’s shop some treeeeess</p>
                             <p className='text-right pl-30'>When you purchase a tree, we donate the equivalent amount to a tree-planting organization.</p> 
                             <div className='flex'>
-                                <div className='flex pt-6'>
+                                <div className='flex mt-6 bg-accent rounded-2xl px-5'>
                                     <button class='rounded-full'><HiChevronUp size={48}/></button>
                                     <p class='text-2xl font-bold pt-2 pl-4 pr-4'>4</p>
                                     <button class='rounded-full'><HiChevronDown size={48}/></button>
