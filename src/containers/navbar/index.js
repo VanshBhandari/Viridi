@@ -3,7 +3,7 @@ import { AiOutlinePlusCircle } from "react-icons/ai";
 import { AiOutlineHeart } from "react-icons/ai";
 import { MdOutlineLocationOn } from "react-icons/md";
 import { MdOutlineShoppingCart } from "react-icons/md";
-import MakePost from "../make-post";
+// import MakePost from "../make-post";
 import Shop from "../shop";
 
 export default function Navbar() {
@@ -48,7 +48,7 @@ export default function Navbar() {
                 </nav>
             </div>
             <Shop trigger={isShopClick} setTrigger={setIsShopClick} />
-            <MakePost trigger={isMakePostClick} setTrigger={setIsMakePostClick} />
+            {/* <MakePost trigger={isMakePostClick} setTrigger={setIsMakePostClick} /> */}
         </>
     )
 
