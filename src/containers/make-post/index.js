@@ -21,30 +21,6 @@ export default function MakePost(props) {
         if (post === "") {
             return;
         }
-        // let attachmentUrl1 = "";
-        // if (attachment !== "") {
-        //     const attachmentRef1 = ref(
-        //         getStorage(fbApp),
-        //     );
-        //     const response = await uploadString(
-        //         attachmentRef1,
-        //         attachment[0],
-        //         "data_url"
-        //     );
-        //     attachmentUrl1 = await getDownloadURL(response.ref);
-        // }
-        // let attachmentUrl2 = "";
-        // if (attachment !== "") {
-        //     const attachmentRef2 = ref(
-        //         getStorage(fbApp),
-        //     );
-        //     const response = await uploadString(
-        //         attachmentRef2,
-        //         attachment[1],
-        //         "data_url"
-        //     );
-        //     attachmentUrl2 = await getDownloadURL(response.ref);
-        // }
 
         await addDoc(collection(getFirestore(fbApp), "posts"), {
             text: post,
@@ -113,22 +89,6 @@ export default function MakePost(props) {
 
     };
 
-    // const onFileChange = (event) => {
-    //     const {
-    //         target: { files },
-    //     } = event;
-    //     const theFile = files[0];
-    // const reader = new FileReader();
-    // reader.onloadend = (finishedEvent) => {
-    //     const {
-    //         currentTarget: { result },
-    //     } = finishedEvent;
-    //     setAttachment(result);
-    // };
-    //     if (Boolean(theFile)) {
-    //         reader.readAsDataURL(theFile);
-    //     }
-    // };
 
 
 
@@ -176,16 +136,8 @@ export default function MakePost(props) {
                         <div className="factory__clear" onClick={onClearAttachment}>
                             <span>Remove</span>
                         </div>
-
-                        {/* <img
-                            src={attachment2}
-                            style={{ maxWidth: '10%' }}
-                        />
-                        <div className="factory__clear" onClick={onClearAttachment2}>
-                            <span>Remove</span>
-                        </div> */}
                         <button onSubmit={onSubmit}>
-                            post
+                            Post
                         </button>
                     </form>
 
