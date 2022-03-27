@@ -3,6 +3,7 @@ import { UserContext } from '../../contexts/user'
 import Logo from '../../media/Text Logo.png'
 import './style.css'
 import { SearchBar, SignInBtn } from '../../components'
+import Social from '../../media/bottom.png'
 
 export default function SidePanel() {
 
@@ -18,8 +19,8 @@ export default function SidePanel() {
               <SearchBar />
             </div>
           </div>
-          <div class="flex-shrink-0 flex border-t border-gray-200 p-4">
-            Side footer
+          <div class="flex pb-4">
+            <img src={Social}></img>
           </div>
         </div>
       </div>
