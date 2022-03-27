@@ -9,7 +9,6 @@ export default function MakePost( props, userObj ) {
     console.log(props);
     const [post, setpost] = useState("");
     const [attachment, setAttachment] = useState("");
-
     const onSubmit = async (event) => {
         event.preventDefault();
         if (post === "") {
@@ -98,7 +97,7 @@ export default function MakePost( props, userObj ) {
                             <div className="factoryForm__attachment">
                                 <img
                                     src={attachment}
-                                    style={{ backgroundImage: attachment }}
+                                    style={{ maxWidth:'50%'}}
                                     alt="attachment"
                                 />
                                 <div className="factory__clear" onClick={onClearAttachment}>
