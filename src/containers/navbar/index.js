@@ -30,7 +30,7 @@ export default function Navbar() {
         <>
             <div className="flex flex-row justify-around">
                 <></>
-                <nav className="NavBar flex justify-around py-4 mx-auto bg-accent w-96 rounded-b-2xl fixed">
+                <nav className="NavBar flex justify-around py-4 mx-auto bg-accent w-96 rounded-b-2xl drop-shadow-md fixed">
                     <div className="navicons flex flex-row gap-12">
                         <button className="CreatePost" onClick={OnMakePostClick}>
                             <p><AiOutlinePlusCircle size={28} /></p>
