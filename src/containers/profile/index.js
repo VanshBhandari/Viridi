@@ -9,7 +9,7 @@ export default function Profile() {
     const [user, setUser] = useContext(UserContext).user
     
     return (!isProfileOpen) ? (
-        <div className='profile mt-5'>
+        <div className='profile mt-3'>
             <button className='profbtn' onClick={()=> setIsProfileOpen(true)}>
                 {(user) ?
                 (<img className='rounded-full border-accent border-4' src={user.photoURL} alt='profile-photo' />)
@@ -21,7 +21,7 @@ export default function Profile() {
         <>
             <div className='overlay o-block' onClick={()=> setIsProfileOpen(false)}></div>
             <div className='popup'>
-                <div className='profile'>
+                <div className='profile mt-3'>
                     <button className='profbtn' onClick={()=> setIsProfileOpen(false)}>
                         {(user) ?
                         (<img className='rounded-full border-accent border-4' src={user.photoURL} alt='profile-photo' />)
