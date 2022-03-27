@@ -7,12 +7,15 @@ import {
   Link
 } from "react-router-dom";
 import { Home } from './pages';
+import { UserContextProvider } from './contexts/user'
 
 function App() {
   return (
-    <div className="App">
-      <Home />
-    </div>
+    <UserContextProvider>
+      <div className="App">
+        <Home />
+      </div>
+    </UserContextProvider>
   );
 }
 
