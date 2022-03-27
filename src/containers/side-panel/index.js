@@ -1,9 +1,11 @@
+import React, { useContext } from 'react'
+import { UserContext } from '../../contexts/user'
 import Logo from '../../media/Text Logo.png'
 import './style.css'
-import { SearchBar } from '../../components'
-import SignInWithGoogle from '../../services/social-auth'
+import { SearchBar, SignInBtn } from '../../components'
 
 export default function SidePanel() {
+
   return (
     <div className="flex-shrink">
       <div className='relative w-64 h-full'>
@@ -18,9 +20,6 @@ export default function SidePanel() {
           </div>
           <div class="flex-shrink-0 flex border-t border-gray-200 p-4">
             Side footer
-          </div>
-          <div>
-            <SignInWithGoogle />
           </div>
         </div>
       </div>
