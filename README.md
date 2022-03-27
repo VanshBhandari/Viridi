@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+[![Swift Version](https://img.shields.io/badge/swift-5.3-orange?style=flat-square)](swift-url)
+[![Platform](https://img.shields.io/cocoapods/p/LFAlertController.svg?style=flat-square)](http://cocoapods.org/pods/LFAlertController)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Corona Tracker: Live Covid-19 Information
+<br />
 
-## Available Scripts
+<p align="center">
+  <a href="https://github.com/JeewooC/CoronaTracker">
+    <img src="./logo.jpg" alt="Logo" width="100" height="100">
+  </a>
+  <p align="center">
+    This app utilizes the live data from this <a href="https://corona-api.com/">Corona API</a> and displays them in a convenient and informative way for the user. It makes it easy for its users to stay updated with the latest numbers of the virus in their own country as well as inform them of the conditions of other countries around the world.
+  </p>
+</p>  
 
-In the project directory, you can run:
+<p align="center">
+<img src= "https://media.giphy.com/media/0RHGMYAOMaGEroN0Oa/giphy.gif" width="400" >
+</p>
 
-### `npm start`
+## Purpose
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+I created this project after I noticed that the people in my community had no concept of how bad Covid-19 was around the world. It wasn't nearly as bad here as it was in some other parts of the world. To develop a sense of awareness and caution for such a big-scale event, you need to understand the scale and be aware of the worst-case scenario. So, to educate my community, I decided to build this app. It gives the users all the critical numbers (case numbers, deaths, hospitalization rate, etc.) for countries worldwide simply and interactively.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+I distributed this project to many of my friends and classmates, whom I asked to continue sharing with their friends. Several people have admitted to me that they had no idea how bad Covid-19 was outside of British Columbia, and many have gasped upon seeing the statistics. I believe that this project has impacted my community and better prepared them for the spike in the pandemic that was to come.
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [x] 24/7 Live Data Support
+- [x] Daily Numbers & Total Numbers
+- [x] Search Bar for Quick Access
+- [x] Flags for Each Country for Easier Recognition
+- [x] Dark Mode Support
 
-### `npm run build`
+## Requirements
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- iOS 14.3+
+- Xcode 12.4
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Contribute
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+I would love you for the contribution to **Corona Tracker**.
 
-### `npm run eject`
+## Meta
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Jeewoo Chung – [@jeewoo.chung.14](https://www.facebook.com/jeewoo.chung.14/) – jeewoo.chung@gmail.com
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+[https://github.com/JeewooC](https://github.com/JeewooC)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[swift-url]: https://swift.org/
