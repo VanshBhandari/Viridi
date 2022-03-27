@@ -6,12 +6,9 @@ import { fbApp } from '../../fbase';
 import { addDoc, collection, getFirestore } from 'firebase/firestore';
 
 export default function MakePost( props, userObj ) {
-    console.log(props);
     const [post, setpost] = useState("");
     const [attachment, setAttachment] = useState("");
     const [attachment2, setAttachment2] = useState("");
-    console.log(attachment)
-    console.log(attachment2)
     const onSubmit = async (event) => {
         event.preventDefault();
         if (post === "") {
@@ -29,14 +26,29 @@ export default function MakePost( props, userObj ) {
             );
             attachmentUrl = await getDownloadURL(response.ref);
         }
+        
+        let attachmentUrl2 = "";
+        if (attachment2 !== "") {
+            const attachmentRef2 = ref(
+                getStorage(fbApp),
+            );
+            const response = await uploadString(
+                attachmentRef2,
+                attachment2,
+                "data_url2"
+            );
+            attachmentUrl2 = await getDownloadURL(response.ref);
+        }
         await addDoc(collection(getFirestore(fbApp), "posts"), {
             text: post,
             createdAt: Date.now(),
             creatorId: userObj.uid,
             attachmentUrl,
+            attachmentUrl2
         });
         setpost("");
         setAttachment("");
+        setAttachment2("");
     }
 
     const onChange = (event) => {
@@ -52,6 +64,7 @@ export default function MakePost( props, userObj ) {
             target: { files },
         } = event;
         const theFile = files[0];
+        console.log(theFile);
         const reader = new FileReader();
         reader.onloadend = (finishedEvent) => {
             const {
@@ -68,19 +81,21 @@ export default function MakePost( props, userObj ) {
         const {
             target: { files },
         } = event;
-        const theFile = files[0];
-        const reader = new FileReader();
-        reader.onloadend = (finishedEvent) => {
+        const theFile2 = files[0];
+        const reader2 = new FileReader();
+        reader2.onloadend = (finishedEvent2) => {
             const {
-                currentTarget: { result },
-            } = finishedEvent;
-            setAttachment2(result);
+                currentTarget: { result2 },
+            } = finishedEvent2;
+            setAttachment2(result2);
         };
-        if (Boolean(theFile)) {
-            reader.readAsDataURL(theFile);
+        if (Boolean(theFile2)) {
+            reader2.readAsDataURL(theFile2);
         }
     };
+
     const onClearAttachment = () => setAttachment("");
+    const onClearAttachment2 = () => setAttachment2("");
 
     return (props.trigger) ? (
         <>
@@ -112,7 +127,7 @@ export default function MakePost( props, userObj ) {
                             onChange={onFileChange}
                             style={{ opacity: 0 }}
                         />
-                        <label htmlFor="attach-file" className="factoryInput__label">
+                        <label htmlFor="attach-file" className="factoryInput__label2">
                             <span>Add after photo</span>
                         </label>
                         <input
@@ -122,11 +137,12 @@ export default function MakePost( props, userObj ) {
                             onChange={onFileChange2}
                             style={{ opacity: 0 }}
                         />
+
                         {attachment && (
                             <div className="factoryForm__attachment">
                                 <img
                                     src={attachment}
-                                    style={{ maxWidth:'50%'}}
+                                    style={{ maxWidth:'30%'}}
                                     alt="attachment"
                                 />
                                 <div className="factory__clear" onClick={onClearAttachment}>
@@ -135,13 +151,13 @@ export default function MakePost( props, userObj ) {
                             </div>
                         )}
                         {attachment2 && (
-                            <div className="factoryForm__attachment">
+                            <div className="factoryForm__attachment2">
                                 <img
                                     src={attachment2}
-                                    style={{ maxWidth:'50%'}}
+                                    style={{ maxWidth:'10%'}}
                                     alt="attachment"
                                 />
-                                <div className="factory__clear" onClick={onClearAttachment}>
+                                <div className="factory__clear" onClick={onClearAttachment2}>
                                     <span>Remove</span>
                                 </div>
                             </div>
