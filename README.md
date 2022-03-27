@@ -1,7 +1,7 @@
 
 # VIRIDI - trash2trees
 
-[Figma Prototype]('https://www.figma.com/proto/8zwcEHJ2PXMpBzORXQFbGb/viridi?page-id=0%3A1&node-id=4%3A2&viewport=241%2C48%2C0.54&scaling=min-zoom&starting-point-node-id=4%3A2')
+('https://www.figma.com/proto/8zwcEHJ2PXMpBzORXQFbGb/viridi?page-id=0%3A1&node-id=4%3A2&viewport=241%2C48%2C0.54&scaling=min-zoom&starting-point-node-id=4%3A2')
 
 Viridi (Latin for Fresh/Green) aims to unite isolated action, acting as a larger-scale community for the environmentally-minded, as well as to raise funds for deserving tree-planting organizations. Our inspiration was the social media trends that have been occurring recently on platforms such as Tik Tok, Instagram, and Snapchat. Viridi aims to facilitate marketing strategies within these apps that could be utilized to act upon issues that are trendy at the moment.
 
