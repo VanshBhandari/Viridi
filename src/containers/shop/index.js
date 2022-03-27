@@ -15,7 +15,7 @@ export default function Shop(props) {
     const treeValue = 200;
     const [accBalance, setAccBalance] = useState(500);
     const [treesnum, setTreesnum] = useState(0);
-    const [errMsg, setErrMsg] = useState("");
+    const [errMsg, setErrMsg] = useState("New Rank: 572");
 
     function timeout(delay) {
         return new Promise( res => setTimeout(res, delay) );
@@ -27,7 +27,7 @@ export default function Shop(props) {
         } else {
             setErrMsg("You Don't Have Enough VIRIDI Coins");
             await timeout(3000);
-            setErrMsg("");
+            setErrMsg("New Rank: 572");
         }
     }
     function onTreeDownClick(e) {
@@ -75,7 +75,7 @@ export default function Shop(props) {
                                 <button className='flex pt-10 pl-7 ' onClick={onGoClick}><GrLinkNext size={32} /></button>
                             </div>
                             <p className='err-msg'>{errMsg}</p>
-                            <div className='flex pl-8'><p className='text-text-secondary'>New Rank: 572</p>
+                            <div className='flex pl-8'>
                             <BsArrowUpCircleFill className='mt-1.5 ml-1' />
                             </div>
 
