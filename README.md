@@ -1,50 +1,29 @@
-[![Swift Version](https://img.shields.io/badge/swift-5.3-orange?style=flat-square)](swift-url)
-[![Platform](https://img.shields.io/cocoapods/p/LFAlertController.svg?style=flat-square)](http://cocoapods.org/pods/LFAlertController)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-# Corona Tracker: Live Covid-19 Information
-<br />
+# VIRIDI - trash2trees
 
-<p align="center">
-  <a href="https://github.com/JeewooC/CoronaTracker">
-    <img src="./logo.jpg" alt="Logo" width="100" height="100">
-  </a>
-  <p align="center">
-    This app utilizes the live data from this <a href="https://corona-api.com/">Corona API</a> and displays them in a convenient and informative way for the user. It makes it easy for its users to stay updated with the latest numbers of the virus in their own country as well as inform them of the conditions of other countries around the world.
-  </p>
-</p>  
 
-<p align="center">
-<img src= "https://media.giphy.com/media/0RHGMYAOMaGEroN0Oa/giphy.gif" width="400" >
-</p>
+Viridi (Latin for Fresh/Green) aims to unite isolated action, acting as a larger-scale community for the environmentally-minded, as well as to raise funds for deserving tree-planting organizations. Our inspiration was the social media trends that have been occurring recently on platforms such as Tik Tok, Instagram, and Snapchat. Viridi aims to facilitate marketing strategies within these apps that could be utilized to act upon issues that are trendy at the moment.
 
-## Purpose
 
-I created this project after I noticed that the people in my community had no concept of how bad Covid-19 was around the world. It wasn't nearly as bad here as it was in some other parts of the world. To develop a sense of awareness and caution for such a big-scale event, you need to understand the scale and be aware of the worst-case scenario. So, to educate my community, I decided to build this app. It gives the users all the critical numbers (case numbers, deaths, hospitalization rate, etc.) for countries worldwide simply and interactively.
+##  What It Does
 
-I distributed this project to many of my friends and classmates, whom I asked to continue sharing with their friends. Several people have admitted to me that they had no idea how bad Covid-19 was outside of British Columbia, and many have gasped upon seeing the statistics. I believe that this project has impacted my community and better prepared them for the spike in the pandemic that was to come.
+Users can upload before and after pictures of places they’ve cleaned up, with a location and caption tagged. Other users can upvote, comment, etc. This can be converted to social media currency known as seeds.
 
+With the currency earned through posting and receiving upvotes, users can spend the currency within the in-app store to “buy trees”. Money acquired from the platform would go towards donating to tree-planting organizations.
 ## Features
 
-- [x] 24/7 Live Data Support
-- [x] Daily Numbers & Total Numbers
-- [x] Search Bar for Quick Access
-- [x] Flags for Each Country for Easier Recognition
-- [x] Dark Mode Support
+- Social Media Platform
+- Purchasing Trees In-App Store
+- Currency System Based On Likes
+- Google Sign In System Using Firebase
 
-## Requirements
 
-- iOS 14.3+
-- Xcode 12.4
+## What's Next In Store for VIRIDI
+- User Leaderboard System
+- Geotagging (Interactive Map and Location)
+- Recent Activity
+- Special User Perks
+### Minor Changes
+- Sort By
+- Post Reactions
 
-## Contribute
-
-I would love you for the contribution to **Corona Tracker**.
-
-## Meta
-
-Jeewoo Chung – [@jeewoo.chung.14](https://www.facebook.com/jeewoo.chung.14/) – jeewoo.chung@gmail.com
-
-[https://github.com/JeewooC](https://github.com/JeewooC)
-
-[swift-url]: https://swift.org/
