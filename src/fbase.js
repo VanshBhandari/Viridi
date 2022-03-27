@@ -13,6 +13,7 @@ import {
  addDoc,
 } from "firebase/firestore";
 import { getStorage } from 'firebase/storage'
+import "firebase/storage";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
