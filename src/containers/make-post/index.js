@@ -1,11 +1,13 @@
 import { getDownloadURL, getStorage, ref, uploadString } from 'firebase/storage';
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { MdClose } from "react-icons/md";
 import './style.css'
 import { fbApp } from '../../fbase';
 import { addDoc, collection, getFirestore } from 'firebase/firestore';
+import { UserContext } from '../../contexts/user';
 
 export default function MakePost( props, userObj ) {
+    const [user, setUser] = useContext(UserContext).user
     const [post, setpost] = useState("");
     const [attachment, setAttachment] = useState("");
     const [attachment2, setAttachment2] = useState("");
