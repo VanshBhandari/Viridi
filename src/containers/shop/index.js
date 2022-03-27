@@ -25,12 +25,13 @@ export default function Shop(props) {
         if (accBalance > (treesnum + 1) * treeValue) {
             setTreesnum((treesnum + 1));
         } else {
-            setErrMsg("You Don't Have Enough VIRIDI Coins");
+            setErrMsg("You don't have enough balance:(");
         }
     }
     function onTreeDownClick(e) {
 
         if (treesnum > 0) {
+            setErrMsg("");
             setTreesnum((treesnum - 1));
         }
     }
@@ -72,7 +73,7 @@ export default function Shop(props) {
 
                                 <button className='flex pt-8 pl-7 ' onClick={onGoClick}><GrLinkNext size={32} /></button>
                             </div>
-                            <p className='err-msg'>{errMsg}</p>
+                            <p className='err-msg text-text-error'>{errMsg}</p>
                             <div className='flex pl-8'>
                             
                             </div>
