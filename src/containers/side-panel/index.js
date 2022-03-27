@@ -7,7 +7,7 @@ export default function SidePanel() {
   return (
     <div className="flex-shrink">
       <div className='relative w-64 h-full'>
-        <div className="fixed h-screen flex flex-col w-64 shadow-md bg-accent px-1">
+        <div className="fixed h-screen flex flex-col w-64 shadow-md bg-accent px-1 drop-shadow-md">
           <div class="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
             <div class="flex items-center flex-shrink-0 px-4">
               <img src={Logo} className="h-16 w-auto"/>
