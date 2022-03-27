@@ -3,10 +3,12 @@ import { AiOutlinePlusCircle } from "react-icons/ai";
 import { AiOutlineHeart } from "react-icons/ai";
 import { MdOutlineLocationOn } from "react-icons/md";
 import { MdOutlineShoppingCart } from "react-icons/md";
+import MakePost from "../make-post";
 import Shop from "../shop";
 
 export default function Navbar() {
     const [isShopClick, setIsShopClick] = useState(false);
+    const [isMakePostClick, setIsMakePostClick] = useState(false);
 
     function OnShopClick(e){
         if(!isShopClick){
@@ -16,15 +18,23 @@ export default function Navbar() {
         }
     }
 
+    function OnMakePostClick(e){
+        if(!isMakePostClick){
+            setIsMakePostClick(true);
+        }else{
+            setIsMakePostClick(false);
+        }
+    }
+
     return (
         <>
             <div className="flex flex-row justify-around">
                 <></>
                 <nav className="NavBar flex justify-around py-4 mx-auto bg-accent w-96 rounded-b-2xl">
                     <div className="navicons flex flex-row gap-12">
-                        <div className="CreatePost">
+                        <button className="CreatePost" onClick={OnMakePostClick}>
                             <p><AiOutlinePlusCircle size={28} /></p>
-                        </div>
+                        </button>
                         <div className="Activity">
                             <p><AiOutlineHeart size={28} /></p>
                         </div>
@@ -38,6 +48,7 @@ export default function Navbar() {
                 </nav>
             </div>
             <Shop trigger={isShopClick} setTrigger={setIsShopClick} />
+            <MakePost trigger={isMakePostClick} setTrigger={setIsMakePostClick} />
         </>
     )
 
