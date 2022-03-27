@@ -13,7 +13,7 @@ export default function Profile() {
         </div>
     ) : (
         <>
-            <div className='overlay o-block'></div>
+            <div className='overlay o-block' onClick={()=> setIsProfileOpen(false)}></div>
             <div className='popup'>
                 <div className='profile'>
                     <button className='profbtn' onClick={()=> setIsProfileOpen(false)}>
