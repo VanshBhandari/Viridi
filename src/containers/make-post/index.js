@@ -9,6 +9,9 @@ export default function MakePost( props, userObj ) {
     console.log(props);
     const [post, setpost] = useState("");
     const [attachment, setAttachment] = useState("");
+    const [attachment2, setAttachment2] = useState("");
+    console.log(attachment)
+    console.log(attachment2)
     const onSubmit = async (event) => {
         event.preventDefault();
         if (post === "") {
@@ -61,6 +64,22 @@ export default function MakePost( props, userObj ) {
         }
     };
 
+    const onFileChange2 = (event) => {
+        const {
+            target: { files },
+        } = event;
+        const theFile = files[0];
+        const reader = new FileReader();
+        reader.onloadend = (finishedEvent) => {
+            const {
+                currentTarget: { result },
+            } = finishedEvent;
+            setAttachment2(result);
+        };
+        if (Boolean(theFile)) {
+            reader.readAsDataURL(theFile);
+        }
+    };
     const onClearAttachment = () => setAttachment("");
 
     return (props.trigger) ? (
@@ -84,7 +103,7 @@ export default function MakePost( props, userObj ) {
                             <input type="submit" value="&rarr;" className="factoryInput__arrow" />
                         </div>
                         <label htmlFor="attach-file" className="factoryInput__label">
-                            <span>Add photos</span>
+                            <span>Add before photo</span>
                         </label>
                         <input
                             id="attach-file"
@@ -93,10 +112,32 @@ export default function MakePost( props, userObj ) {
                             onChange={onFileChange}
                             style={{ opacity: 0 }}
                         />
+                        <label htmlFor="attach-file" className="factoryInput__label">
+                            <span>Add after photo</span>
+                        </label>
+                        <input
+                            id="attach-file"
+                            type="file"
+                            accept="image/*"
+                            onChange={onFileChange2}
+                            style={{ opacity: 0 }}
+                        />
                         {attachment && (
                             <div className="factoryForm__attachment">
                                 <img
                                     src={attachment}
+                                    style={{ maxWidth:'50%'}}
+                                    alt="attachment"
+                                />
+                                <div className="factory__clear" onClick={onClearAttachment}>
+                                    <span>Remove</span>
+                                </div>
+                            </div>
+                        )}
+                        {attachment2 && (
+                            <div className="factoryForm__attachment">
+                                <img
+                                    src={attachment2}
                                     style={{ maxWidth:'50%'}}
                                     alt="attachment"
                                 />
