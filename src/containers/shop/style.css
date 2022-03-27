@@ -13,11 +13,6 @@
     z-index: 10;
 }
 
-.closebtn{
-    /* position: absolute;
-    left: 95%;
-    top: 5%; */
-}
 
 .overlay {
     position: fixed;
