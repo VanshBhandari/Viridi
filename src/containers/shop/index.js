@@ -26,8 +26,6 @@ export default function Shop(props) {
             setTreesnum((treesnum + 1));
         } else {
             setErrMsg("You Don't Have Enough VIRIDI Coins");
-            await timeout(3000);
-            setErrMsg("");
         }
     }
     function onTreeDownClick(e) {
@@ -59,11 +57,11 @@ export default function Shop(props) {
                     <div className='flex py-8'>
                         <img src={Logo} className="h-80 ml-16 " />
                         <div className='flex flex-col px-16 py-8 space-y-5'>
-                            <p className='font-black text-4xl text-right'>Let’s shop some treeeeess</p>
+                            <p className='font-black text-4xl text-left'>Let’s shop some trees!</p>
 
-                            <p className='text-right pl-30'>When you purchase a tree, we donate the equivalent amount to a tree-planting organization.</p> 
-                            <div className='flex pl-8'>
-                                <div className='flex mt-6 bg-accent rounded-2xl px-5 py-2'>
+                            <p className='text-lrft pl-30'>When you purchase a tree, we donate the equivalent amount to a tree-planting organization.</p> 
+                            <div className='flex'>
+                                <div className='flex mt-4 bg-accent rounded-2xl px-5 py-2'>
                                     <button className='flex bg-primary rounded-full' onClick={onTreeUpClick}><HiChevronUp size={48}/></button>
                                     <p class='text-2xl font-bold pt-2 pl-4 pr-4'>{treesnum}</p>
                                     <button className='flex bg-primary rounded-full' onClick={onTreeDownClick}><HiChevronDown size={48}/></button>
@@ -72,11 +70,11 @@ export default function Shop(props) {
 
                                 </div>
 
-                                <button className='flex pt-10 pl-7 ' onClick={onGoClick}><GrLinkNext size={32} /></button>
+                                <button className='flex pt-8 pl-7 ' onClick={onGoClick}><GrLinkNext size={32} /></button>
                             </div>
                             <p className='err-msg'>{errMsg}</p>
-                            <div className='flex pl-8'><p className='text-text-secondary'>New Rank: 572</p>
-                            <BsArrowUpCircleFill className='mt-1.5 ml-1' />
+                            <div className='flex pl-8'>
+                            
                             </div>
 
                         </div>
