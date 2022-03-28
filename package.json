@@ -1,7 +1,7 @@
 {
   "name": "vrd",
   "version": "0.1.0",
-  "homepage": "https://vanshbhandari.github.io/viridi",
+  "homepage": "https://vanshbhandari.github.io/Viridi",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
