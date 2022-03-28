@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/viridi/static/css/main.2d536c54.css",
-    "main.js": "/viridi/static/js/main.18106dbf.js",
-    "static/media/thumbnail.png": "/viridi/static/media/thumbnail.41270798bd7abb96edb2.png",
-    "static/media/Shop Tree.png": "/viridi/static/media/Shop Tree.1337b9766966e977160a.png",
-    "static/media/Text Logo.png": "/viridi/static/media/Text Logo.68ebb430c7e29897ccce.png",
-    "static/media/Logo.png": "/viridi/static/media/Logo.ed69a3a5111cf91ef9ea.png",
-    "static/media/bottom.png": "/viridi/static/media/bottom.e20bd5d8d3460a2205d6.png",
-    "index.html": "/viridi/index.html",
-    "main.2d536c54.css.map": "/viridi/static/css/main.2d536c54.css.map",
-    "main.18106dbf.js.map": "/viridi/static/js/main.18106dbf.js.map"
+    "main.css": "/Viridi/static/css/main.2d536c54.css",
+    "main.js": "/Viridi/static/js/main.9d4bab76.js",
+    "static/media/thumbnail.png": "/Viridi/static/media/thumbnail.41270798bd7abb96edb2.png",
+    "static/media/Shop Tree.png": "/Viridi/static/media/Shop Tree.1337b9766966e977160a.png",
+    "static/media/Text Logo.png": "/Viridi/static/media/Text Logo.68ebb430c7e29897ccce.png",
+    "static/media/Logo.png": "/Viridi/static/media/Logo.ed69a3a5111cf91ef9ea.png",
+    "static/media/bottom.png": "/Viridi/static/media/bottom.e20bd5d8d3460a2205d6.png",
+    "index.html": "/Viridi/index.html",
+    "main.2d536c54.css.map": "/Viridi/static/css/main.2d536c54.css.map",
+    "main.9d4bab76.js.map": "/Viridi/static/js/main.9d4bab76.js.map"
   },
   "entrypoints": [
     "static/css/main.2d536c54.css",
-    "static/js/main.18106dbf.js"
+    "static/js/main.9d4bab76.js"
   ]
 }
