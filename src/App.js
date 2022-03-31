@@ -8,8 +8,8 @@ import {
 } from "react-router-dom";
 import { Home } from './pages';
 import { UserContextProvider } from './contexts/user'
-
 function App() {
+
   return (
     <UserContextProvider>
       <div className="App">
