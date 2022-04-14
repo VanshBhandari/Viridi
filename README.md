@@ -28,3 +28,12 @@ With the currency earned through posting and receiving upvotes, users can spend 
 - Sort By
 - Post Reactions
 
+### Temporary Section 
+To setup django on your computer, follow this guide: https://docs.djangoproject.com/en/4.0/topics/install/ <br/>
+Remember to setup Python pip if you haven't already. We will be using pip to install any packages  <br/>
+If you install any packages, it is crucial you put the package name + version into the requirements.txt file <br />
+Also when you install any packages, setup a virtual environment so that the packages don't get saved onto your actual computer --- THIS IS IMPORTANT! <br />
+We'll look into integrating Django with Firebase later on
+
+
+
